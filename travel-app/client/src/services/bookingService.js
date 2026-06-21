@@ -10,7 +10,7 @@
 
 // Put the real backend URL in a .env file (see .env.example).
 // Falls back to localhost so it doesn't crash before .env exists.
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api/bookings';
 
 // Your WhatsApp business number, digits only, with country code.
 // e.g. India number +91 98765 43210 → "919876543210"
