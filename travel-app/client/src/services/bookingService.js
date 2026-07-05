@@ -10,7 +10,7 @@
 
 // Put the real backend URL in a .env file (see .env.example).
 // Falls back to localhost so it doesn't crash before .env exists.
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api/bookings';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
 
 // Your WhatsApp business number, digits only, with country code.
 // e.g. India number +91 98765 43210 → "919876543210"
@@ -22,7 +22,10 @@ const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '910000000000';
  * See BACKEND_CONTRACT.md for the exact request/response shape.
  */
 export async function createBooking(bookingData) {
-  const response = await fetch(`${API_BASE_URL}/bookings`, {
+  const url = `${API_BASE_URL}/bookings`;
+  console.log('Calling backend:', url, bookingData);
+
+  const response = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(bookingData),

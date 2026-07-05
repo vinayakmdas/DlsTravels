@@ -18,7 +18,7 @@ const bookingSchema = new mongoose.Schema(
 
     specialRequest: String,
 
-    seatCapacity: Number,
+    seatCapacity: String,
 
     vehicleType: {
       type: String,

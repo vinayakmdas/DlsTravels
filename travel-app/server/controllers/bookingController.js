@@ -2,6 +2,7 @@ import Booking from "../models/Booking.js";
 
 export const createBooking = async (req, res) => {
   try {
+    console.log(req.body)
     const booking = await Booking.create(req.body);
 
     res.status(201).json({
