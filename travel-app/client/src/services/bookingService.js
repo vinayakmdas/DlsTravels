@@ -1,26 +1,10 @@
-// ──────────────────────────────────────────────
-// bookingService.js — MODEL layer
-//
-// This is the ONLY file that should ever call the
-// backend for bookings. Components/hooks never call
-// fetch() directly — they call functions from here.
-// That way, when your friend's API is ready, you only
-// update this ONE file, not every component.
-// ──────────────────────────────────────────────
 
-// Put the real backend URL in a .env file (see .env.example).
-// Falls back to localhost so it doesn't crash before .env exists.
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
 
-// Your WhatsApp business number, digits only, with country code.
-// e.g. India number +91 98765 43210 → "919876543210"
+
 const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '910000000000';
 
-/**
- * Sends the booking to the backend.
- * Your friend needs to expose: POST {API_BASE_URL}/bookings
- * See BACKEND_CONTRACT.md for the exact request/response shape.
- */
+
 export async function createBooking(bookingData) {
   const url = `${API_BASE_URL}/bookings`;
   console.log('Calling backend:', url, bookingData);
@@ -39,11 +23,7 @@ export async function createBooking(bookingData) {
   return response.json(); // expected: { success: true, bookingId: "..." }
 }
 
-/**
- * Builds a readable WhatsApp message from the form data and
- * returns a wa.me link. Used so "Send Booking" can open WhatsApp
- * immediately, even before the backend call finishes/exists.
- */
+
 export function buildWhatsAppLink(bookingData) {
   const lines = [
     `*New Booking Request*`,

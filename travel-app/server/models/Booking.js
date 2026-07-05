@@ -6,67 +6,61 @@ const bookingSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-
     phoneNumber: {
       type: String,
       required: true,
     },
-
-    whatsappNumber: String,
-
-    email: String,
-
-    specialRequest: String,
-
-    seatCapacity: String,
-
+    whatsappNumber: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+    },
     vehicleType: {
       type: String,
-      enum: ["AC", "NonAC"],
-      default: "AC",
+      required: true,
     },
-
+    seatCapacity: {
+      type: String,
+    },
     from: {
       type: String,
       required: true,
     },
-
     to: {
       type: String,
       required: true,
     },
-
     pickupDate: {
-      type: Date,
+      type: String,
       required: true,
     },
-
-    pickupTime: String,
-
-    fullPackageRequired: {
-      type: Boolean,
-      default: false,
+    pickupTime: {
+      type: String,
+      required: true,
     },
-
+    journeyType: {
+      type: String,
+      required: true,
+    },
     adults: {
       type: Number,
       default: 1,
     },
-
     children: {
       type: Number,
       default: 0,
     },
-
     luggage: {
-      type: Number,
-      default: 0,
-    },
-
-    journeyType: {
       type: String,
-      enum: ["oneWay", "roundTrip"],
-      default: "oneWay",
+    },
+    fullPackageRequired: {
+      type: Boolean,
+      default: false,
+    },
+    specialRequest: {
+      type: String,
     },
   },
   {
@@ -74,4 +68,6 @@ const bookingSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("Booking", bookingSchema);
+const Booking = mongoose.model("Booking", bookingSchema);
+
+export default Booking;
