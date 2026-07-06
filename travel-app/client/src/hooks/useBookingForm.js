@@ -68,13 +68,17 @@ export function useBookingForm() {
     setError(null);
     setIsSubmitting(true);
 
+    console.log('Submitting booking with data:', formData);
+
     try {
       // 1. Try saving to backend (works once your friend's API is live)
-      await createBooking(formData).catch((err) => {
-        // Don't block the WhatsApp flow if backend isn't ready yet —
-        // just log it. Remove this catch once the API is required.
-        console.warn('Backend not reachable yet:', err.message);
-      });
+      try {
+        const result = await createBooking(formData);
+        console.log('✅ Backend save SUCCESS:', result);
+      } catch (err) {
+        console.error('❌ Backend save FAILED:', err);
+        alert('Backend save failed — check console (F12) for details: ' + err.message);
+      }
 
       // 2. Always open WhatsApp with a prefilled message
       const whatsappLink = buildWhatsAppLink(formData);
