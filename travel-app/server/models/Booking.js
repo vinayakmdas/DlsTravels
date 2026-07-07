@@ -62,6 +62,10 @@ const bookingSchema = new mongoose.Schema(
     specialRequest: {
       type: String,
     },
+    status: {
+      type: String,
+      default: "not-connected",
+    },
   },
   {
     timestamps: true,
