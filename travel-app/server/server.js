@@ -2,8 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
-import bookingRoutes from "./routes/BookingRoutes.js";
-
+import bookingRoutes from "./routes/bookingRoutes.js";
 dotenv.config();
 
 connectDB();
