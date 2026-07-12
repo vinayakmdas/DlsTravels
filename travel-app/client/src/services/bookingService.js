@@ -2,7 +2,7 @@
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
 
 
-const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '910000000000';
+const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '918848561548';
 
 
 export async function createBooking(bookingData) {

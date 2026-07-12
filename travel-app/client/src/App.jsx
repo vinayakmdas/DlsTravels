@@ -120,14 +120,28 @@
 // }
 
 // export default App
-import Hero from './components/Hero';
-import BookingForm from './components/booking/BookingForm';
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import BookingForm from "./components/booking/BookingForm";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <main>
+      <Navbar />
+
       <Hero />
+
+      <About />
+
       <BookingForm />
+      <Footer />
+      
+
+      {/* Contact Section (Coming Next) */}
+
+      {/* Footer (Coming Next) */}
     </main>
   );
 }
