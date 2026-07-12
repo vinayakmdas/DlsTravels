@@ -2,6 +2,10 @@ import { ArrowRight, Star, MessageCircle } from 'lucide-react';
 import Navbar from './Navbar';
 
 export default function Hero() {
+   const whatsappNumber = '918848561548'; // replace with your number, country code + number, no + or spaces
+  const whatsappMessage = "Hi! I'm interested in booking a ride. Can you help me?";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-brand-dark">
       {/* Background image */}
@@ -48,12 +52,15 @@ export default function Hero() {
       </div>
 
       {/* Floating chat button */}
-      <button
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
         className="absolute bottom-8 right-8 z-10 flex h-14 w-14 items-center justify-center rounded-full bg-cta-gradient text-white shadow-lg"
-        aria-label="Open chat"
+        aria-label="Chat on WhatsApp"
       >
         <MessageCircle size={22} />
-      </button>
+      </a>
     </section>
   );
 }
