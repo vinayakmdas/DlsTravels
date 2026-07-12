@@ -14,8 +14,10 @@ export default function BookingForm() {
   };
 
   return (
-    <section className="bg-white px-6 py-20 sm:px-12 lg:px-20">
-      <div className="mx-auto max-w-3xl text-center">
+   <section
+  id="book"
+  className="bg-white px-6 py-20 sm:px-12 lg:px-20"
+>   <div className="mx-auto max-w-3xl text-center">
         <span className="inline-block rounded-full bg-form-badgeBg px-4 py-1.5 text-sm font-semibold text-form-badgeText">
           Booking
         </span>
@@ -198,13 +200,14 @@ export default function BookingForm() {
         {error && <p className="text-center text-sm font-medium text-red-600">{error}</p>}
 
         <div className="text-center">
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="inline-flex items-center gap-2 rounded-full bg-submit-gradient px-8 py-3.5 font-semibold text-white shadow-lg shadow-brand-primary/30 transition-transform hover:scale-105 disabled:opacity-60"
-          >
-            {isSubmitting ? 'Sending…' : 'Send Booking'} <Send size={18} />
-          </button>
+        <button
+  type="submit"
+  disabled={isSubmitting}
+  className="mx-auto flex items-center gap-2 rounded-full bg-cta-gradient px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-primary/30 transition-transform hover:scale-105 disabled:opacity-60"
+>
+  {isSubmitting ? "Sending..." : "Send Booking"}
+  <Send size={18} />
+</button>
           <p className="mt-3 text-sm text-form-textMuted">
             We'll open WhatsApp to confirm your booking instantly.
           </p>

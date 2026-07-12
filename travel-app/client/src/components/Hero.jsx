@@ -3,7 +3,10 @@ import Navbar from './Navbar';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-brand-dark">
+    <section
+  id="home"
+  className="relative min-h-screen overflow-hidden bg-brand-dark"
+>
       {/* Background image */}
       <img
         src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1920&auto=format&fit=crop"
@@ -38,13 +41,21 @@ export default function Hero() {
 
         {/* CTAs */}
         <div className="mt-8 flex flex-wrap items-center gap-4">
-          <button className="flex items-center gap-2 rounded-full bg-cta-gradient px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-primary/30 transition-transform hover:scale-105">
-            Book Now <ArrowRight size={18} />
-          </button>
-          <button className="rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10">
-            Explore Fleet
-          </button>
-        </div>
+  <a
+    href="#book"
+    className="flex items-center gap-2 rounded-full bg-cta-gradient px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-primary/30 transition-transform hover:scale-105"
+  >
+    Book Now
+    <ArrowRight size={18} />
+  </a>
+
+  <a
+    href="#about"
+    className="rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+  >
+    About Us
+  </a>
+</div>
       </div>
 
       {/* Floating chat button */}
