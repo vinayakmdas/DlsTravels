@@ -6,4 +6,4 @@ Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /api/
 
-Sitemap: https://dls-travels-gief.vercel.app/sitemap.xml
+Sitemap: https://dls-travels-gief.vercel.app/sitemap.xml 
