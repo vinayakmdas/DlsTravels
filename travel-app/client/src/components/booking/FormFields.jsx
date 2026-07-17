@@ -1,11 +1,15 @@
+import React, { useId } from 'react';
+
 export function FormInput({ label, icon, value, onChange, placeholder, type = 'text' }) {
+  const id = useId();
   return (
     <div>
-      <label className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-gray-800">
+      <label htmlFor={id} className="mb-1.5 flex items-center gap-1.5 text-sm font-medium text-gray-800">
         {icon}
         {label}
       </label>
       <input
+        id={id}
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -17,10 +21,12 @@ export function FormInput({ label, icon, value, onChange, placeholder, type = 't
 }
 
 export function FormTextarea({ label, value, onChange, placeholder }) {
+  const id = useId();
   return (
     <div>
-      <label className="mb-1.5 block text-sm font-medium text-gray-800">{label}</label>
+      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-gray-800">{label}</label>
       <textarea
+        id={id}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
@@ -32,10 +38,12 @@ export function FormTextarea({ label, value, onChange, placeholder }) {
 }
 
 export function FormSelect({ label, value, onChange, options, placeholder }) {
+  const id = useId();
   return (
     <div>
-      <label className="mb-1.5 block text-sm font-medium text-gray-800">{label}</label>
+      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-gray-800">{label}</label>
       <select
+        id={id}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         className="w-full appearance-none rounded-xl border border-form-border bg-white px-4 py-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-primary/40"

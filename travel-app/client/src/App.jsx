@@ -120,29 +120,65 @@
 // }
 
 // export default App
+import React, { Suspense } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import BookingForm from "./components/booking/BookingForm";
-import Footer from "./components/Footer";
+
+const About = React.lazy(() => import('./components/About'));
+const BookingForm = React.lazy(() => import('./components/booking/BookingForm'));
+const Footer = React.lazy(() => import('./components/Footer'));
 
 function App() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "TaxiService",
+    "name": "DLS Travels",
+    "url": "https://dls-travels-gief.vercel.app",
+    "areaServed": [
+      "Parappanangadi",
+      "Malappuram",
+      "Kozhikode",
+      "Tirur",
+      "Kerala"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Parappanangadi",
+      "addressRegion": "Kerala",
+      "addressCountry": "India"
+    }
+  };
+
   return (
-    <main>
-      <Navbar />
-
-      <Hero />
-
-      <About />
-
-      <BookingForm />
-      <Footer />
+    <>
+      <Helmet>
+        <title>DLS Travels | Taxi Booking in Parappanangadi, Malappuram</title>
+        <meta name="description" content="Book reliable taxi services in Parappanangadi, Malappuram, Kerala. DLS Travels offers airport pickup, local taxi, outstation trips and 24/7 cab booking." />
+        <link rel="canonical" href="https://dls-travels-gief.vercel.app/" />
+        <meta property="og:title" content="DLS Travels | Taxi Booking in Parappanangadi, Malappuram" />
+        <meta property="og:description" content="Book reliable taxi services in Parappanangadi, Malappuram, Kerala. DLS Travels offers airport pickup, local taxi, outstation trips and 24/7 cab booking." />
+        <meta property="og:url" content="https://dls-travels-gief.vercel.app/" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="DLS Travels | Taxi Booking in Parappanangadi, Malappuram" />
+        <meta name="twitter:description" content="Book reliable taxi services in Parappanangadi, Malappuram, Kerala. DLS Travels offers airport pickup, local taxi, outstation trips and 24/7 cab booking." />
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      </Helmet>
       
-
-      {/* Contact Section (Coming Next) */}
-
-      {/* Footer (Coming Next) */}
-    </main>
+      <main>
+        <Navbar />
+        <Hero />
+        
+        <Suspense fallback={<div>Loading...</div>}>
+          <About />
+          <BookingForm />
+          <Footer />
+        </Suspense>
+      </main>
+    </>
   );
 }
 

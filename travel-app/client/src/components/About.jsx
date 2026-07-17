@@ -87,7 +87,8 @@ export default function About() {
         <div className="relative flex-1">
           <img
             src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900"
-            alt="Travel"
+            alt="Comfortable travel experience with DLS Travels in Kerala"
+            loading="lazy"
             className="h-[550px] w-full rounded-3xl object-cover shadow-2xl"
           />
 

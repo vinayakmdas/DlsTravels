@@ -7,14 +7,14 @@ export default function Hero() {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
-    <section
+    <header
   id="home"
   className="relative min-h-screen overflow-hidden bg-brand-dark"
 >
       {/* Background image */}
       <img
         src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1920&auto=format&fit=crop"
-        alt="Winding mountain road at sunset"
+        alt="Winding mountain road at sunset - DLS Travels"
         className="absolute inset-0 h-full w-full object-cover opacity-90"
       />
       {/* Dark gradient overlay so text stays readable */}
@@ -48,6 +48,7 @@ export default function Hero() {
   <a
     href="#book"
     className="flex items-center gap-2 rounded-full bg-cta-gradient px-6 py-3.5 font-semibold text-white shadow-lg shadow-brand-primary/30 transition-transform hover:scale-105"
+    aria-label="Book a ride now"
   >
     Book Now
     <ArrowRight size={18} />
@@ -56,6 +57,7 @@ export default function Hero() {
   <a
     href="#about"
     className="rounded-full border border-white/20 bg-white/5 px-6 py-3.5 font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+    aria-label="Learn more about us"
   >
     About Us
   </a>
@@ -72,6 +74,6 @@ export default function Hero() {
       >
         <MessageCircle size={22} />
       </a>
-    </section>
+    </header>
   );
 }

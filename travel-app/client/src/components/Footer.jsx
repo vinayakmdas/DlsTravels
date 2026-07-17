@@ -28,6 +28,7 @@ export default function Footer() {
           <a
             href="tel:+919497409806"
             className="mb-2 flex items-center justify-center gap-2 transition hover:text-white/80 md:justify-start"
+            aria-label="Call +91 9497409806"
           >
             <Phone size={18} />
             +91 9497409806
@@ -36,6 +37,7 @@ export default function Footer() {
           <a
             href="tel:+919652443198"
             className="mb-2 flex items-center justify-center gap-2 transition hover:text-white/80 md:justify-start"
+            aria-label="Call +91 9652443198"
           >
             <Phone size={18} />
             +91 9652443198
@@ -46,6 +48,7 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer"
             className="flex items-center justify-center gap-2 transition hover:text-white/80 md:justify-start"
+            aria-label="Visit our Instagram page"
           >
             <FaInstagram size={18} />
             Instagram
